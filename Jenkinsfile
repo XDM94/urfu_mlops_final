@@ -3,7 +3,7 @@ pipeline {
 
 //     environment {
 //         JENKINS_HOME = "$JENKINS_HOME"
-//         BUILD = "${JENKINS_HOME}/workspace/mlops_final"
+//         BUILD = "${JENKINS_HOME}/workspace/urfu_mlops_final"
 //     }
 
     stages {
