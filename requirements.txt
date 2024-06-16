@@ -1,0 +1,10 @@
+fastapi
+fastapi-cli
+numpy
+pandas
+pydantic
+scikit-learn
+scipy
+uvicorn
+catboost
+pytest
