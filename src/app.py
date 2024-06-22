@@ -35,7 +35,7 @@ async def predict_survival(passenger: Passenger):
     test_data = np.array([[passenger.Pclass, passenger.Sex, passenger.Age,
                        passenger.SibSp, passenger.Parch, passenger.Fare, passenger.Embarked]])
 
-    # Set feature names for RandomForestClassifier
+    # Установите имена признаков для RandomForestClassifier
     column_names = ['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare', 'Embarked']
     X_test = pd.DataFrame(test_data, columns=column_names)
 
