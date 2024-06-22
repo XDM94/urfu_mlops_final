@@ -22,6 +22,7 @@ def test_api_app():
 
     # Парсинг JSON-данных из ответа
     json_data = response.json()
+    
 
     assert response.status_code == 200
 
