@@ -4,18 +4,17 @@ from catboost.datasets import titanic
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
-from sklearn.metrics import accuracy_score, classification_report, r2_score
-import pickle
+from sklearn.metrics import accuracy_score, r2_score
 
 # Получаем правильные пути
-SCRIPTS_PATH = os.path.dirname(os.path.abspath(__file__))      # Каталог со скриптами
-PROJECT_PATH = os.path.dirname(SCRIPTS_PATH)                   # Каталог проекта
+SCRIPTS_PATH = os.path.dirname(os.path.abspath(__file__))  # Каталог со скриптами
+PROJECT_PATH = os.path.dirname(SCRIPTS_PATH)               # Каталог проекта
 
 # Путь к датасетам
-DATASETS_PATH = PROJECT_PATH + "/datasets/"
+DATASETS_PATH = os.path.join(PROJECT_PATH, "datasets")
 
 # Загрузка датасета Titanic из файла CSV
-train_df = pd.read_csv(DATASETS_PATH + 'dataset_titanic.csv')
+train_df = pd.read_csv(os.path.join(DATASETS_PATH, 'dataset_titanic.csv'))
 
 # Заполнение пропущенных значений
 train_df['Age'] = train_df['Age'].fillna(train_df['Age'].median())
@@ -48,5 +47,6 @@ print(f"Accuracy: {accuracy}")
 r2 = r2_score(y_test, y_pred)
 print(f"Сoefficient of determination: {r2}")
 
+# Тестирование предсказаний
 def test_predictions():
-   assert r2_score(y_test, y_pred) > 0.2, "This dataset has problem."
+    assert r2_score(y_test, y_pred) > 0.2, "This dataset has problems."
