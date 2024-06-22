@@ -22,8 +22,7 @@ def test_api_app():
 
     # Парсинг JSON-данных из ответа
     json_data = response.json()
-    
-    # Проверка, что статус код ответа 200
+
     assert response.status_code == 200
 
     # Проверка, что ключ 'survival_prediction' присутствует в JSON-ответе
